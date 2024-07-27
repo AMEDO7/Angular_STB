@@ -1,4 +1,3 @@
-
 import { Component } from '@angular/core';
 import { AuthService } from '../auth.service';
 
@@ -14,19 +13,11 @@ export class LoginComponent {
   constructor(private authService: AuthService) { }
 
   onLogin() {
-    const observer = {
-      next: (response: any) => {
-        console.log('Login successful', response);
-      },
-      error: (error: any) => {
-        console.error('Login error', error);
-      },
-      complete: () => {
-        console.log('Login request complete');
-      }
-    };
-
     this.authService.login({ email: this.email, password: this.password })
-      .subscribe(observer);
+      .subscribe(response => {
+        console.log('Login successful', response);
+      }, error => {
+        console.error('Login error', error);
+      });
   }
 }
