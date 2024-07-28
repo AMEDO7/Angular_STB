@@ -1,14 +1,4 @@
-<!--<form (ngSubmit)="onSignUp()">
-    <label for="email">Email:</label>
-    <input type="email" id="email" [(ngModel)]="email" name="email" required>
-  
-    <label for="password">Password:</label>
-    <input type="password" id="password" [(ngModel)]="password" name="password" required>
-  
-    <button type="submit">Sign Up</button>
-  </form>
--->
-  <!-- src/app/sign-up/sign-up.component.html -->
+<!--
   <div class="sign-up-container">
     <mat-card>
       <mat-card-header>
@@ -25,6 +15,109 @@
             <input matInput type="password" [(ngModel)]="password" name="password" required>
           </mat-form-field>
           <button mat-raised-button color="primary" type="submit">Sign Up</button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  -->
+  <div class="sign-up-container">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Formulaire de Sign-Up</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <form (ngSubmit)="onSignUp()">
+          <!-- Informations Personnelles -->
+          <h2>Informations Personnelles</h2>
+          <div class="form-group">
+            <mat-form-field appearance="fill">
+              <mat-label>Nom Complet</mat-label>
+              <input matInput type="text" [(ngModel)]="fullName" name="fullName" required>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Date de Naissance</mat-label>
+              <input matInput type="date" [(ngModel)]="birthDate" name="birthDate" required>
+            </mat-form-field>
+          </div>
+          <div class="form-group">
+            <mat-form-field appearance="fill">
+              <mat-label>Adresse Email</mat-label>
+              <input matInput type="email" [(ngModel)]="email" name="email" required>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Numéro de Téléphone</mat-label>
+              <input matInput type="tel" [(ngModel)]="phoneNumber" name="phoneNumber" required>
+            </mat-form-field>
+          </div>
+  
+          <!-- Adresse -->
+          <h2>Adresse</h2>
+          <div class="form-group">
+            <mat-form-field appearance="fill">
+              <mat-label>Adresse</mat-label>
+              <input matInput type="text" [(ngModel)]="address" name="address" required>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Adresse Complémentaire</mat-label>
+              <input matInput type="text" [(ngModel)]="address2" name="address2">
+            </mat-form-field>
+          </div>
+          <div class="form-group">
+            <mat-form-field appearance="fill">
+              <mat-label>Ville</mat-label>
+              <input matInput type="text" [(ngModel)]="city" name="city" required>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Code Postal</mat-label>
+              <input matInput type="text" [(ngModel)]="postalCode" name="postalCode" required>
+            </mat-form-field>
+          </div>
+          <div class="form-group-single">
+            <mat-form-field appearance="fill">
+              <mat-label>Pays</mat-label>
+              <input matInput type="text" [(ngModel)]="country" name="country" required>
+            </mat-form-field>
+          </div>
+  
+          <!-- Informations de Connexion -->
+          <h2>Informations de Connexion</h2>
+          <div class="form-group">
+            <mat-form-field appearance="fill">
+              <mat-label>Nom d'Utilisateur</mat-label>
+              <input matInput type="text" [(ngModel)]="username" name="username" required>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Mot de Passe</mat-label>
+              <input matInput type="password" [(ngModel)]="password" name="password" required>
+            </mat-form-field>
+          </div>
+          <div class="form-group-single">
+            <mat-form-field appearance="fill">
+              <mat-label>Confirmer le Mot de Passe</mat-label>
+              <input matInput type="password" [(ngModel)]="confirmPassword" name="confirmPassword" required>
+            </mat-form-field>
+          </div>
+  
+          <!-- Sécurité -->
+          <h2>Sécurité</h2>
+          <div class="form-group">
+            <mat-form-field appearance="fill">
+              <mat-label>Question de Sécurité</mat-label>
+              <input matInput type="text" [(ngModel)]="securityQuestion" name="securityQuestion" required>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Réponse à la Question</mat-label>
+              <input matInput type="text" [(ngModel)]="securityAnswer" name="securityAnswer" required>
+            </mat-form-field>
+          </div>
+  
+          <!-- Conditions Générales -->
+          <h2>Conditions Générales</h2>
+          <mat-checkbox [(ngModel)]="acceptTerms" name="acceptTerms" required>
+            Accepter les Conditions Générales
+          </mat-checkbox>
+  
+          <button mat-raised-button color="primary" type="submit">S'inscrire</button>
         </form>
       </mat-card-content>
     </mat-card>

@@ -1,13 +1,17 @@
 .sign-up-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
-  }
-  
-  mat-card {
-    width: 400px;
-    padding: 20px;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+  overflow-y: auto; /* Ajout d'une barre de défilement verticale si le contenu dépasse la taille de la page */
+  padding: 10px; /* Ajout d'un peu de padding pour que le contenu ne touche pas les bords de la fenêtre */
+}
+
+mat-card {
+  width: 100%;
+  max-width: 600px; /* Limite la largeur maximale pour les écrans plus grands */
+  padding: 20px;
+  box-sizing: border-box; /* S'assure que le padding est inclus dans la largeur totale */
+  overflow-y: auto; /* Ajout d'une barre de défilement verticale si le contenu dépasse la taille de la carte */
+}
