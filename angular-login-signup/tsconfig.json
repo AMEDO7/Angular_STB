@@ -1,33 +1,51 @@
-/* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
-  "compileOnSave": false,
+  "compileOnSave": false, // Désactive la recompilation automatique du projet à la sauvegarde d'un fichier
   "compilerOptions": {
-    "baseUrl": "./",
-    "outDir": "./dist/out-tsc",
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "sourceMap": true,
-    "declaration": false,
-    "downlevelIteration": true,
-    "experimentalDecorators": true,
-    "moduleResolution": "node",
-    "importHelpers": true,
-    "target": "ES2022",
-    "module": "ES2022",
-    "useDefineForClassFields": false,
+    "baseUrl": "./", // Définit le répertoire de base pour résoudre les chemins de modules
+    "outDir": "./dist/out-tsc", // Répertoire de sortie pour les fichiers JavaScript compilés
+    "forceConsistentCasingInFileNames": true, // Oblige la casse cohérente des noms de fichiers
+    "strict": true, // Active toutes les vérifications strictes de type dans TypeScript
+    "noImplicitOverride": true, // Émet une erreur quand une méthode est marquée avec 'override' sans réellement surcharger une méthode
+    "noPropertyAccessFromIndexSignature": true, // Interdit l'accès aux propriétés par index signature
+    "noImplicitReturns": true, // Génère une erreur si une fonction ne retourne pas une valeur dans toutes les branches de son corps
+    "noFallthroughCasesInSwitch": true, // Génère une erreur si une clause case dans un switch ne se termine pas par un break ou un return
+    "sourceMap": true, // Génère des fichiers source map pour faciliter le débogage
+    "declaration": false, // Ne génère pas les fichiers de déclaration (.d.ts)
+    "downlevelIteration": true, // Permet des itérations compatibles avec des versions plus anciennes de JavaScript
+    "experimentalDecorators": true, // Active le support des décorateurs expérimentaux dans TypeScript
+    "moduleResolution": "node", // Utilise la résolution des modules de type Node.js
+    "importHelpers": true, // Réduit la taille du code généré en utilisant des fonctions d'assistance pour les fonctionnalités de TypeScript
+    "target": "ES2022", // Définit la version de JavaScript cible pour la compilation
+    "module": "ES2022", // Utilise la syntaxe des modules ES2022 pour le code généré
+    "useDefineForClassFields": false, // Utilise l'initialisation des champs de classe en utilisant 'define' (recommandé par TypeScript pour ES2022)
     "lib": [
-      "ES2022",
-      "dom"
+      "ES2022", // Inclut les définitions de bibliothèque ES2022
+      "dom" // Inclut les définitions de bibliothèque DOM pour les API de navigateur
     ]
   },
   "angularCompilerOptions": {
-    "enableI18nLegacyMessageIdFormat": false,
-    "strictInjectionParameters": true,
-    "strictInputAccessModifiers": true,
-    "strictTemplates": true
+    "enableI18nLegacyMessageIdFormat": false, // Désactive le format de message ID hérité pour i18n
+    "strictInjectionParameters": true, // Active la vérification stricte des paramètres d'injection Angular
+    "strictInputAccessModifiers": true, // Active la vérification stricte des modificateurs d'accès sur les entrées de composants
+    "strictTemplates": true // Active les vérifications strictes dans les templates Angular
   }
 }
+// Le fichier tsconfig.json est utilisé pour configurer les options du compilateur TypeScript pour votre projet Angular.
+// Voici une explication de l'utilité générale de ce fichier et des paramètres qu'il contient :
+
+/*-------1-------Utilité du fichier tsconfig.json
+Configuration du compilateur TypeScript :
+Le fichier tsconfig.json définit les options de compilation pour le compilateur TypeScript. 
+Cela inclut les règles de compilation, les chemins de sortie, et les options de langage.*/
+
+/*--------2------Optimisation de la compilation :
+En spécifiant des options comme strict, noImplicitReturns, ou noFallthroughCasesInSwitch,
+ vous pouvez rendre le code plus sûr et plus fiable en activant des vérifications strictes au moment de la compilation.
+*/
+
+/*--------3---------Gestion des chemins et des modules :
+Les options comme baseUrl et moduleResolution aident TypeScript à résoudre les modules et les chemins d'importation dans votre projet.
+*/
+
+/*-------4--------Support des fonctionnalités modernes de JavaScript :
+Les options comme target et lib définissent la version de JavaScript à utiliser et les bibliothèques disponibles lors de la compilation.*/
